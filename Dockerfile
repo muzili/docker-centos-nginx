@@ -1,4 +1,4 @@
-FROM muzili/centos-base
+FROM centos:centos7
 
 MAINTAINER Joshua Lee <muzili@gmail.com>
 
@@ -7,12 +7,9 @@ MAINTAINER Joshua Lee <muzili@gmail.com>
 ADD etc/nginx.repo /etc/yum.repos.d/nginx.repo
 
 # Install base stuff.
-RUN yum -y install \
-  nginx \
-  unzip
-
-# Clean up YUM when done.
-RUN yum clean all
+RUN yum clean all && \
+    yum -y install epel-release && \
+    yum -y install curl wget nginx unzip
 
 RUN mkdir /srv/www
 
