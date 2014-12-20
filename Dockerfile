@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM muzili/centos-base:latest
 
 MAINTAINER Joshua Lee <muzili@gmail.com>
 
