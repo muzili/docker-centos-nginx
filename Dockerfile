@@ -8,7 +8,6 @@ ADD etc/nginx.repo /etc/yum.repos.d/nginx.repo
 
 # Install base stuff.
 RUN yum clean all && \
-    yum -y install epel-release && \
     yum -y install curl wget nginx unzip
 
 RUN mkdir /srv/www
